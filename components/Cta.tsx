@@ -16,7 +16,11 @@ const Cta: React.FC<CtaProps> = ({
   link,
   component: { variant },
 }: CtaProps) => (
-  <a className={`cta cta-${variant ? variant : "default"}`} href={link}>
+  <a
+    title={text}
+    className={`cta cta-${variant ? variant : "default"}`}
+    href={link}
+  >
     {variant ? (
       <>
         <span>{text}</span>

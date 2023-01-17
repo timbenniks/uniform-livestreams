@@ -10,13 +10,17 @@ const Header = () => (
       />
       <ul className="flex space-x-6 text-sm underline items-center">
         <li>
-          <a href="">Composable without compromise</a>
+          <a title="Composable without compromise" href="/">
+            Composable without compromise
+          </a>
         </li>
         <li>
-          <a href="">Unpack the stack</a>
+          <a title="Unpack the stack" href="/">
+            Unpack the stack
+          </a>
         </li>
         <li>
-          <a href="" className="cta">
+          <a title="Become a guest" href="/" className="cta">
             Become a guest
           </a>
         </li>
