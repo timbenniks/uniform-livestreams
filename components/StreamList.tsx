@@ -17,7 +17,7 @@ const StreamList: React.FC<StreamListProps> = ({
     <section className="max-w-7xl m-auto ">
       <div className="max-w-xl">
         {title && (
-          <h1 className="font-bold text-3xl md:text-5xl mb-2">{title}</h1>
+          <h2 className="font-bold text-3xl md:text-5xl mb-2">{title}</h2>
         )}
         {description && <p className="mb-10">{description}</p>}
       </div>
