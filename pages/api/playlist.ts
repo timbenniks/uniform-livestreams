@@ -18,7 +18,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   })
 
   videos.sort(function (a, b) {
-    return new Date(b.date) - new Date(a.date);
+    const bDate: any = new Date(b.date)
+    const aDate: any = new Date(a.date)
+
+    return bDate - aDate;
   });
 
   res.status(200).json({ videos })
