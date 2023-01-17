@@ -71,7 +71,7 @@ const Hero: React.FC<HeroProps> = ({
             width={(image && image[0]?.width) || ""}
             height={(image && image[0]?.height) || ""}
             className="block"
-            loading="lazy"
+            loading="eager"
           />
         ) : null}
       </div>

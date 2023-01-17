@@ -1,7 +1,13 @@
 const Footer = () => (
   <footer className="bg-black">
     <div className="px-8 xl:px-0 py-12 max-w-7xl m-auto">
-      <img src="./logo.png" alt="Uniform" width="130" className="block mb-12" />
+      <img
+        src="./logo.png"
+        alt="Uniform"
+        height="34"
+        width="130"
+        className="block mb-12"
+      />
 
       <ul className="text-white grid grid-cols-1 md:grid-cols-4 gap-8">
         <li>

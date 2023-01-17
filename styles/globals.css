@@ -15,7 +15,7 @@ footer a {
 }
 
 .cta.cta-secondary {
-  @apply flex space-x-2 underline text-xl bg-transparent py-2 px-6 justify-center text-[#7BB3FF];
+  @apply flex space-x-2 underline text-xl bg-transparent py-2 px-6 justify-center text-white;
 }
 
 /* header */
@@ -33,7 +33,7 @@ header .cta {
 }
 
 .hero-light .cta.cta-secondary .arrow path {
-  stroke: #0052ed;
+  stroke: #fff;
 }
 
 /* highlight */
