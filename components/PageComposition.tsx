@@ -29,11 +29,23 @@ export default function PageComposition({
   }
 
   const title = compositionInstance.parameters.title.value as string;
+  const description = compositionInstance.parameters.description
+    .value as string;
+  const image = compositionInstance.parameters.image.value[0];
 
   return (
     <>
       <Head>
         <title>{title}</title>
+        <meta property="og:title" content="{title}" />
+
+        <meta name="description" content={description} />
+        <meta property="og:description" content={description} />
+
+        <meta
+          property="og:image"
+          content={image?.srcset.replace(" 1200w", "")}
+        />
       </Head>
       <>
         <Header />
