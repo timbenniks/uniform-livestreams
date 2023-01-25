@@ -48,3 +48,12 @@ header .cta {
 .highlight .cta.cta-secondary .arrow path {
   stroke: #fff;
 }
+
+.rich-text ol {
+  @apply mt-4 pl-4 space-y-2;
+  list-style: decimal;
+}
+
+.rich-text p + p {
+  @apply my-4;
+}

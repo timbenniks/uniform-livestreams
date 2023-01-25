@@ -28,8 +28,12 @@ const TwoColumn: React.FC<TwoColumnProps> = ({
       </article>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
-        <Slot name="sideA" />
-        <Slot name="sideB" />
+        <div className="side-a">
+          <Slot name="sideA" />
+        </div>
+        <div className="side-b">
+          <Slot name="sideB" />
+        </div>
       </div>
     </div>
   </div>

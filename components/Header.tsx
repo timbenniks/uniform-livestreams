@@ -10,12 +10,15 @@ const Header = () => (
       />
       <ul className="flex space-x-6 text-sm underline items-center">
         <li>
-          <a title="Composable without compromise" href="/">
+          <a
+            title="Composable without compromise"
+            href="/composable-without-compromise"
+          >
             Composable without compromise
           </a>
         </li>
         <li>
-          <a title="Unpack the stack" href="/">
+          <a title="Unpack the stack" href="/unpack-the-stack">
             Unpack the stack
           </a>
         </li>

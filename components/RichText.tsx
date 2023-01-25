@@ -22,7 +22,7 @@ const RichText: React.FC<RichTextProps> = ({
 }: RichTextProps) => (
   <div
     style={{ background: background ? background : "none" }}
-    className={`${lightVersion ? "text-black" : "text-white"} ${
+    className={`rich-text ${lightVersion ? "text-black" : "text-white"} ${
       noPadding ? "p-0" : "p-8"
     }`}
   >
