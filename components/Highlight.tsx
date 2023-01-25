@@ -17,8 +17,6 @@ type Image = {
 };
 
 type HighlightProps = ComponentProps<{
-  title: string;
-  description: string;
   image: Image;
   component: {
     variant?: string;
@@ -26,8 +24,6 @@ type HighlightProps = ComponentProps<{
 }>;
 
 const Highlight: React.FC<HighlightProps> = ({
-  title,
-  description,
   image,
   component: { variant },
 }: HighlightProps) => (
@@ -38,19 +34,19 @@ const Highlight: React.FC<HighlightProps> = ({
   >
     <div className="max-w-7xl m-auto flex justify-between flex-col md:flex-row">
       <article className="p-12 md:px-0 md:py-12">
-        <h3 className="font-bold text-3xl md:text-5xl mb-2">{title}</h3>
-        <h4 className="mb-8">{description}</h4>
-        <div className="flex space-y-3 md:space-x-3 md:space-y-0 flex-col md:flex-row text-center">
+        <Slot name="title" />
+        <Slot name="description" />
+        <div className="flex space-y-3 md:space-x-3 md:space-y-0 flex-col md:flex-row text-center mt-8">
           <Slot name="primaryCta" />
           <Slot name="secondaryCta" />
         </div>
       </article>
       {image ? (
         <img
-          srcSet={(image && image[0]?.srcset) || ""}
-          alt={(image && image[0]?.alt) || ""}
-          width={(image && image[0]?.width) || ""}
-          height={(image && image[0]?.height) || ""}
+          srcSet={image[0]?.srcset || ""}
+          alt={image[0]?.alt || ""}
+          width={image[0]?.width || ""}
+          height={image[0]?.height || ""}
           className="block max-w-[489px]"
           loading="lazy"
         />

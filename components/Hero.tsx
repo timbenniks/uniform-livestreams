@@ -17,8 +17,6 @@ type Image = {
 };
 
 type HeroProps = ComponentProps<{
-  title: string;
-  subTitle: string;
   image: Image[];
   lightVersion: boolean;
   background?: string;
@@ -28,8 +26,6 @@ type HeroProps = ComponentProps<{
 }>;
 
 const Hero: React.FC<HeroProps> = ({
-  title,
-  subTitle,
   image,
   lightVersion,
   background,
@@ -46,18 +42,14 @@ const Hero: React.FC<HeroProps> = ({
         variant
           ? "flex-col-reverse md:flex-row-reverse"
           : "flex-col md:flex-row"
-      } max-w-7xl m-auto`}
+      } max-w-7xl mx-auto md:aspect-[1280/573]`}
     >
       <div className="md:w-2/4 flex md:items-center justify-center">
         <article className="max-w-xl p-8 md:p-0">
-          <h1 className="font-bold text-3xl md:text-5xl leading-[58px] mb-2 md:mb-6">
-            {title}
-          </h1>
-          <h2 className="font-bold md:text-[21px] leading-[24px] mb-8">
-            {subTitle}
-          </h2>
+          <Slot name="title" />
+          <Slot name="description" />
 
-          <div className="flex space-y-3 md:space-x-3 md:space-y-0 flex-col md:flex-row text-center">
+          <div className="flex space-y-3 md:space-x-3 md:space-y-0 flex-col md:flex-row text-center mt-4">
             <Slot name="primaryCta" />
             <Slot name="secondaryCta" />
           </div>
@@ -66,14 +58,23 @@ const Hero: React.FC<HeroProps> = ({
       <div className="md:w-2/4">
         {image ? (
           <img
-            srcSet={(image && image[0]?.srcset) || ""}
-            alt={(image && image[0]?.alt) || ""}
-            width={(image && image[0]?.width) || ""}
-            height={(image && image[0]?.height) || ""}
+            srcSet={image[0]?.srcset || ""}
+            alt={image[0]?.alt || ""}
+            width={image[0]?.width || ""}
+            height={image[0]?.height || ""}
             className="block"
             loading="eager"
           />
-        ) : null}
+        ) : (
+          <img
+            srcSet="https://res.cloudinary.com/dwfcofnrd/image/upload/q_auto,f_auto,ar_640:573,c_fill/w_700/Screenshot_2023-01-25_at_14.19.56_zhe8a9.png"
+            alt="No image added"
+            width="640"
+            height="573"
+            className="block"
+            loading="eager"
+          />
+        )}
       </div>
     </div>
   </div>

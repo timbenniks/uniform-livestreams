@@ -4,3 +4,5 @@ import "./Hero";
 import "./Cta";
 import "./Highlight";
 import "./RichText"
+import "./TwoColumn"
+import "./Title"

@@ -8,6 +8,9 @@ type VideoCardProps = ComponentProps<{
   description: string;
   poster: string;
   videoId: string;
+  component: {
+    variant?: string;
+  };
 }>;
 
 const VideoCard: React.FC<VideoCardProps> = ({
@@ -15,8 +18,9 @@ const VideoCard: React.FC<VideoCardProps> = ({
   poster,
   description,
   videoId,
+  component: { variant },
 }: VideoCardProps) => (
-  <div className="video-card">
+  <div className={`video-card ${variant ? "bg-white" : ""}`}>
     <a
       href={`https://www.youtube.com/watch?v=${videoId}`}
       target="_blank"
@@ -31,10 +35,14 @@ const VideoCard: React.FC<VideoCardProps> = ({
         className="block w-full mb-4"
         loading="lazy"
       />
-      {title && (
-        <h3 className="text-[#0036cf] font-bold text-xl mb-2">{title}</h3>
-      )}
-      {description && <p className="text-black line-clamp-2">{description}</p>}
+      <div className={`${variant ? "px-4 pb-4" : ""}`}>
+        {title && (
+          <h3 className="text-[#0036cf] font-bold text-xl mb-2">{title}</h3>
+        )}
+        {description && (
+          <p className="text-black line-clamp-2">{description}</p>
+        )}
+      </div>
     </a>
   </div>
 );
