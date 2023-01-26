@@ -25,6 +25,11 @@ const Header = () => (
           </a>
         </li>
         <li>
+          <a title="About Us" href="/about-us">
+            About Us
+          </a>
+        </li>
+        <li>
           <a title="Become a guest" href="/" className="cta">
             Become a guest
           </a>
