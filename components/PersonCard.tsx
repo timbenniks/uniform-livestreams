@@ -50,25 +50,23 @@ const PersonCard: React.FC<PersonCardProps> = ({
       } `}
     >
       <h4 className="font-bold text-2xl lg:text-3xl mb-2">{name}</h4>
-      <ul className="space-y-2">
-        <li className="font-bold">
-          {jobTitle} at {company}
-        </li>
+      <ul>
+        <li className="font-bold">{jobTitle}</li>
+        <li className="mb-4">at {company}</li>
         <li>
           <a
             className="text-black underline"
             href={socialMediaLink}
             target="_blank"
           >
-            {socialMediaHandle}
+            @{socialMediaHandle}
           </a>
         </li>
       </ul>
     </article>
     {externalImage && (
       <img
-        //srcSet={`https://res.cloudinary.com/dwfcofnrd/image/fetch/q_auto,f_auto,ar_1:1,c_crop,g_face/w_400/${externalImage} 400w, https://res.cloudinary.com/dwfcofnrd/image/fetch/q_auto,f_auto,ar_1:1,c_crop,g_face/w_600/${externalImage} 600w, https://res.cloudinary.com/dwfcofnrd/image/fetch/q_auto,f_auto,ar_1:1,c_crop,g_face/w_1000/${externalImage} 1000w`}
-        src={externalImage}
+        srcSet={`https://res.cloudinary.com/dwfcofnrd/image/upload/q_auto,f_auto,ar_1:1,c_crop,g_face/w_400/${externalImage} 400w, https://res.cloudinary.com/dwfcofnrd/image/upload/q_auto,f_auto,ar_1:1,c_crop,g_face/w_600/${externalImage} 600w, https://res.cloudinary.com/dwfcofnrd/image/upload/q_auto,f_auto,ar_1:1,c_crop,g_face/w_1000/${externalImage} 1000w`}
         alt={name}
         width={400}
         height={400}
