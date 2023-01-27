@@ -1,8 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const { id } = req.query
-  const data = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${id}&key=${process.env.YOUTUBE_KEY}&eventType=upcoming&type=video`)
+  const { id, count } = req.query
+  const data = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${id}&key=${process.env.YOUTUBE_KEY}&eventType=upcoming&type=video&maxResults=${count || 5}`)
   const result = await data.json()
 
   let response;
@@ -19,6 +19,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         videoId: video.id
       }
     })
+
+    videos.sort(function (a, b) {
+      const bDate: any = new Date(b.date)
+      const aDate: any = new Date(a.date)
+
+      return bDate - aDate;
+    });
 
     response = { meta: { amount: videos.length }, result: videos }
   }
