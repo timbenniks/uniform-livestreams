@@ -42,9 +42,13 @@ const Hero: React.FC<HeroProps> = ({
         variant
           ? "flex-col-reverse md:flex-row-reverse"
           : "flex-col md:flex-row"
-      } max-w-7xl mx-auto md:aspect-[1280/573]`}
+      } max-w-7xl mx-auto`}
     >
-      <div className="md:w-2/4 flex md:items-center justify-start">
+      <div
+        className={`md:w-2/4 flex md:items-center justify-start ${
+          variant ? "md:ml-8" : ""
+        }`}
+      >
         <article className="max-w-xl p-8 md:p-0">
           <Slot name="title" />
           <Slot name="description" />

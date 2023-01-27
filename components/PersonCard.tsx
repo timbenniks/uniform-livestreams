@@ -37,10 +37,21 @@ const PersonCard: React.FC<PersonCardProps> = ({
   socialMediaLink,
   component: { variant },
 }: PersonCardProps) => (
-  <div className="person-card flex flex-row-reverse mb-4">
-    <article className="bg-white p-8 text-black w-7/12">
-      <h4 className="font-bold text-3xl mb-2">{name}</h4>
-      <ul>
+  <div
+    className={`person-card flex mb-4 flex-col-reverse ${
+      !variant ? "lg:flex-row-reverse" : ""
+    } `}
+  >
+    <article
+      className={`bg-white p-4 lg:p-8 text-black ${
+        !variant ? "lg:w-7/12" : ""
+      } `}
+    >
+      <h4 className="font-bold text-2xl lg:text-3xl mb-2">{name}</h4>
+      <ul className="space-y-2">
+        <li className="font-bold">
+          {jobTitle} at {company}
+        </li>
         <li>
           <a
             className="text-black underline"
@@ -50,9 +61,6 @@ const PersonCard: React.FC<PersonCardProps> = ({
             {socialMediaHandle}
           </a>
         </li>
-        <li>
-          {jobTitle} at {company}
-        </li>
       </ul>
     </article>
     {image && (
@@ -61,7 +69,7 @@ const PersonCard: React.FC<PersonCardProps> = ({
         alt={image[0]?.alt || ""}
         width={image[0]?.width || ""}
         height={image[0]?.height || ""}
-        className="block w-5/12 self-center"
+        className={`block self-center ${!variant ? "lg:w-5/12" : ""} `}
         loading="lazy"
       />
     )}

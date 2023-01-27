@@ -22,7 +22,7 @@ const TwoColumn: React.FC<TwoColumnProps> = ({
     className={` px-8 py-12 ${lightVersion ? "text-black" : "text-white"}`}
   >
     <div className="max-w-7xl mx-auto">
-      <article className="mb-8">
+      <article className="mb-8 max-w-4xl">
         <Slot name="title" />
         <Slot name="description" />
       </article>
