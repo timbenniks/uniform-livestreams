@@ -1,7 +1,6 @@
 import {
   ComponentProps,
   registerUniformComponent,
-  Slot,
 } from "@uniformdev/canvas-react";
 
 type Image = {
@@ -49,8 +48,8 @@ const PersonCard: React.FC<PersonCardProps> = ({
         !variant ? "lg:w-7/12" : ""
       } `}
     >
-      <h4 className="font-bold text-2xl lg:text-3xl mb-2">{name}</h4>
-      <ul>
+      <h4 className="font-bold text-2xl mb-2">{name}</h4>
+      <ul className="text-sm">
         <li className="font-bold">{jobTitle}</li>
         <li className="mb-4">at {company}</li>
         <li>
