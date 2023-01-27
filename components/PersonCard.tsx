@@ -21,6 +21,7 @@ type PersonCardProps = ComponentProps<{
   jobTitle: string;
   socialMediaHandle: string;
   image: Image[];
+  externalImage: string;
   company: string;
   socialMediaLink: string;
   component: {
@@ -35,6 +36,7 @@ const PersonCard: React.FC<PersonCardProps> = ({
   image,
   company,
   socialMediaLink,
+  externalImage,
   component: { variant },
 }: PersonCardProps) => (
   <div
@@ -63,6 +65,18 @@ const PersonCard: React.FC<PersonCardProps> = ({
         </li>
       </ul>
     </article>
+    {externalImage && (
+      <img
+        //srcSet={`https://res.cloudinary.com/dwfcofnrd/image/fetch/q_auto,f_auto,ar_1:1,c_crop,g_face/w_400/${externalImage} 400w, https://res.cloudinary.com/dwfcofnrd/image/fetch/q_auto,f_auto,ar_1:1,c_crop,g_face/w_600/${externalImage} 600w, https://res.cloudinary.com/dwfcofnrd/image/fetch/q_auto,f_auto,ar_1:1,c_crop,g_face/w_1000/${externalImage} 1000w`}
+        src={externalImage}
+        alt={name}
+        width={400}
+        height={400}
+        className={`block self-center ${!variant ? "lg:w-5/12" : ""} `}
+        loading="lazy"
+      />
+    )}
+
     {image && (
       <img
         srcSet={image[0]?.srcset || ""}

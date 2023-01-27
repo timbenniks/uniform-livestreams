@@ -15,7 +15,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         date: video.snippet.publishedAt,
         title: video.snippet.title,
         description: video.snippet.description,
-        image: video.snippet.thumbnails.maxres.url,
+        image: video.snippet.thumbnails.high.url.replace("hqdefault", "maxresdefault"),
         videoId: video.id
       }
     })
