@@ -15,6 +15,7 @@ const ContactUsForm: React.FC<ContactUsFormProps> = ({
   lightVersion,
 }: ContactUsFormProps) => {
   const [form, setForm] = useState({
+    "form-name": "guest",
     name: "",
     email: "",
   });
