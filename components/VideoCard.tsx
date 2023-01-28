@@ -27,7 +27,7 @@ const VideoCard: React.FC<VideoCardProps> = ({
       rel="noopener"
     >
       <img
-        sizes="400px"
+        sizes="600px"
         srcSet={`https://res.cloudinary.com/dwfcofnrd/image/fetch/w_400,q_auto,f_auto/${poster} 400w, https://res.cloudinary.com/dwfcofnrd/image/fetch/w_600,q_auto,f_auto/${poster} 600w, https://res.cloudinary.com/dwfcofnrd/image/fetch/w_1000,q_auto,f_auto/${poster} 1000w`}
         alt={title}
         width={160}

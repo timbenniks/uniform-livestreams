@@ -3,6 +3,7 @@ TODO
 - Add Tim tries
 - Become a guest
 - Footer Links
+- Mobile navigation styling
 
 Done
 
