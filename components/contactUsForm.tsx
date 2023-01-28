@@ -25,6 +25,7 @@ const ContactUsForm: React.FC<ContactUsFormProps> = ({
       <form
         name="guest"
         method="POST"
+        action="/"
         data-netlify="true"
         className="grid grid-cols-3 gap-4 max-w-4xl"
       >
@@ -39,6 +40,7 @@ const ContactUsForm: React.FC<ContactUsFormProps> = ({
             type="text"
             name="name"
             placeholder="Name"
+            required
             className="px-3 py-[10px] w-full"
           />
         </div>
@@ -52,6 +54,7 @@ const ContactUsForm: React.FC<ContactUsFormProps> = ({
             type="email"
             name="email"
             placeholder="Email"
+            required
             className="px-3 py-[10px] w-full"
           />
         </div>
