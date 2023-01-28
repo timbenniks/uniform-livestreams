@@ -13,9 +13,11 @@ import Footer from "./Footer";
 
 export default function PageComposition({
   composition,
+  nodes,
 }: {
   preview: boolean;
   composition: RootComponentInstance;
+  nodes: any;
 }) {
   const { composition: compositionInstance } = useContextualEditing({
     initialCompositionValue: composition,
@@ -46,7 +48,7 @@ export default function PageComposition({
         />
       </Head>
       <>
-        <Header />
+        <Header nodes={nodes} />
         <main>
           <Composition data={compositionInstance} behaviorTracking="onLoad">
             <Slot name="content" />
