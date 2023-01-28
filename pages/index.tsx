@@ -9,6 +9,7 @@ export default CanvasPage;
 export async function getServerSideProps(context: GetStaticPropsContext) {
   const { preview = false } = context;
   const composition = await getCompositionBySlug("/", preview);
+
   return {
     props: {
       composition,

@@ -35,7 +35,7 @@ const Header = () => (
           </a>
         </li>
         <li>
-          <a title="Become a guest" href="/" className="cta">
+          <a title="Become a guest" href="/become-a-guest" className="cta">
             Become a guest
           </a>
         </li>

@@ -2,7 +2,6 @@ TODO
 
 - Add Tim tries
 - Become a guest
-- Footer Links
 - Mobile navigation styling
 
 Done
@@ -13,3 +12,4 @@ Done
 - Schedule page + upcoming component
   - make private upcoming playlist
 - Guest page
+- Footer Links

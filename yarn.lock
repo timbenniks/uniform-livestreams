@@ -177,6 +177,13 @@
   dependencies:
     "@uniformdev/context" "18.0.0"
 
+"@uniformdev/canvas@18.2.2":
+  version "18.2.2"
+  resolved "https://registry.yarnpkg.com/@uniformdev/canvas/-/canvas-18.2.2.tgz#f61990d01fe0dcd589e08ac8a662afd36080075d"
+  integrity sha512-vtpd80PDnPphB4OlscRPhBYKOhHnmgwk/QQeFZsA/qtgzx1kKA6qpKVrShYgyFxOr/Y/ELMFzHb0JIybbL3ong==
+  dependencies:
+    "@uniformdev/context" "18.2.2"
+
 "@uniformdev/cli@^18.0.0":
   version "18.0.0"
   resolved "https://registry.yarnpkg.com/@uniformdev/cli/-/cli-18.0.0.tgz#c12df21a3d9f74e1297a02a876654a7021104901"
@@ -219,6 +226,17 @@
     p-limit "^3.1.0"
     rfdc "^1.3.0"
 
+"@uniformdev/context@18.2.2":
+  version "18.2.2"
+  resolved "https://registry.yarnpkg.com/@uniformdev/context/-/context-18.2.2.tgz#16e5b7bb74239776f3676e61f1317d19bcf9a3aa"
+  integrity sha512-+HKdyIsiKsQTs1vlkkTfPo4DPzUa06jPKJ292gdk95nGRN+VClM6XjcpgPvM1pmHDqGrMJ8hv7HFjANL/xydxw==
+  dependencies:
+    dequal "^2.0.2"
+    js-cookie "3.0.1"
+    mitt "^3.0.0"
+    p-limit "^3.1.0"
+    rfdc "^1.3.0"
+
 "@uniformdev/context@^17.1.0":
   version "17.7.0"
   resolved "https://registry.yarnpkg.com/@uniformdev/context/-/context-17.7.0.tgz#8a2b4dbeb7241d5d8069df1365611ef4c80b5d61"
@@ -229,6 +247,15 @@
     mitt "^3.0.0"
     p-limit "^3.1.0"
     rfdc "^1.3.0"
+
+"@uniformdev/project-map@^18.2.2":
+  version "18.2.2"
+  resolved "https://registry.yarnpkg.com/@uniformdev/project-map/-/project-map-18.2.2.tgz#7b471b7372c068eac3537fc163aba93972439765"
+  integrity sha512-3pmyvBLVnokHzmylUbyC7MDF0FlUqRAgJ4pfZQN/48BF+z5/OdVtXwzWsDvB8+SY0o9/utIU74QZvxA5OWtzUA==
+  dependencies:
+    "@uniformdev/canvas" "18.2.2"
+    "@uniformdev/context" "18.2.2"
+    p-limit "^3.1.0"
 
 "@uniformdev/uniform-new@18.0.0":
   version "18.0.0"
