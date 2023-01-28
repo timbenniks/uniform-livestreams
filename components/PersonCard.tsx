@@ -50,17 +50,19 @@ const PersonCard: React.FC<PersonCardProps> = ({
     >
       <h4 className="font-bold text-2xl mb-2">{name}</h4>
       <ul className="text-sm">
-        <li className="font-bold">{jobTitle}</li>
-        <li className="mb-4">at {company}</li>
-        <li>
-          <a
-            className="text-black underline"
-            href={socialMediaLink}
-            target="_blank"
-          >
-            @{socialMediaHandle}
-          </a>
-        </li>
+        {jobTitle && <li className="font-bold">{jobTitle}</li>}
+        {company && <li className="mb-4">{company}</li>}
+        {socialMediaHandle && (
+          <li>
+            <a
+              className="text-black underline"
+              href={socialMediaLink}
+              target="_blank"
+            >
+              {socialMediaHandle}
+            </a>
+          </li>
+        )}
       </ul>
     </article>
     {externalImage && (

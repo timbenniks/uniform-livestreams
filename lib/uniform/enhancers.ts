@@ -11,7 +11,6 @@ export const enhancerBuilder = new EnhancerBuilder().parameterType(
 );
 
 export default async function runEnhancers(composition) {
-
   await enhance({
     composition,
     enhancers: enhancerBuilder,

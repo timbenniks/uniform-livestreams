@@ -1,9 +1,6 @@
 TODO
 
 - Add Tim tries
-- CTA to Discord
-- Copy
-- Images
 - Become a guest
 - Footer Links
 

@@ -6,6 +6,7 @@ import {
 type CtaProps = ComponentProps<{
   text: string;
   link: string;
+  target: string;
   component: {
     variant?: string;
   };
@@ -14,12 +15,14 @@ type CtaProps = ComponentProps<{
 const Cta: React.FC<CtaProps> = ({
   text,
   link,
+  target,
   component: { variant },
 }: CtaProps) => (
   <a
     title={text}
     className={`cta cta-${variant ? variant : "default"}`}
     href={link}
+    target={target ? target : "_self"}
   >
     {variant ? (
       <>
