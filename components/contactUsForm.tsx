@@ -3,6 +3,7 @@ import {
   registerUniformComponent,
   Slot,
 } from "@uniformdev/canvas-react";
+import { useState } from "react";
 
 type ContactUsFormProps = ComponentProps<{
   background: string;
@@ -12,62 +13,100 @@ type ContactUsFormProps = ComponentProps<{
 const ContactUsForm: React.FC<ContactUsFormProps> = ({
   background,
   lightVersion,
-}: ContactUsFormProps) => (
-  <div
-    style={{ background: background ? background : "#19222F" }}
-    className={lightVersion ? "text-black" : "text-white"}
-  >
-    <div className="max-w-7xl m-auto p-8 lg:py-8 lg:px-0">
-      <article className="mb-8 max-w-4xl">
-        <Slot name="title" />
-        <Slot name="description" />
-      </article>
-      <form
-        name="guest"
-        method="POST"
-        action="/"
-        data-netlify="true"
-        className="grid grid-cols-3 gap-4 max-w-4xl"
-      >
-        <input type="hidden" name="form-name" value="guest" />
+}: ContactUsFormProps) => {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+  });
 
-        <div className="mb-4">
-          <label htmlFor="name" className="sr-only">
-            Name
-          </label>
-          <input
-            id="name"
-            type="text"
-            name="name"
-            placeholder="Name"
-            required
-            className="px-3 py-[10px] w-full"
-          />
-        </div>
+  const [showThankYou, setShowThankYou] = useState(false);
 
-        <div className="mb-4">
-          <label htmlFor="email" className="sr-only">
-            Email
-          </label>
-          <input
-            id="email"
-            type="email"
-            name="email"
-            placeholder="Email"
-            required
-            className="px-3 py-[10px] w-full"
-          />
-        </div>
+  const handleChange = (event) => {
+    setForm({
+      ...form,
+      [event.target.id]: event.target.value,
+    });
+  };
 
-        <div className="">
-          <button type="submit" className="cta">
-            Send
-          </button>
-        </div>
-      </form>
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(form).toString(),
+    })
+      .then(() => {
+        setShowThankYou(true);
+      })
+      .catch((error) => alert(error));
+  };
+
+  return (
+    <div
+      style={{ background: background ? background : "#19222F" }}
+      className={lightVersion ? "text-black" : "text-white"}
+    >
+      <div className="max-w-7xl m-auto p-8 lg:py-8 lg:px-0">
+        <article className="mb-8 max-w-4xl">
+          <Slot name="title" />
+          <Slot name="description" />
+        </article>
+
+        {showThankYou ? (
+          <p className="text-xl font-bold p-4 bg-[#0052ED] text-white mb-4 inline-block">
+            Thanks for reaching out!
+          </p>
+        ) : (
+          <form
+            name="guest"
+            method="POST"
+            data-netlify="true"
+            className="grid grid-cols-3 gap-4 max-w-4xl"
+            onSubmit={handleSubmit}
+          >
+            <input type="hidden" name="form-name" value="guest" />
+
+            <div className="mb-4">
+              <label htmlFor="name" className="sr-only">
+                Name
+              </label>
+              <input
+                id="name"
+                type="text"
+                name="name"
+                placeholder="Name"
+                required
+                className="px-3 py-[10px] w-full text-black"
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="mb-4">
+              <label htmlFor="email" className="sr-only">
+                Email
+              </label>
+              <input
+                id="email"
+                type="email"
+                name="email"
+                placeholder="Email"
+                required
+                className="px-3 py-[10px] w-full text-black"
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="">
+              <button type="submit" className="cta">
+                Send
+              </button>
+            </div>
+          </form>
+        )}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 registerUniformComponent({
   type: "contactUsForm",

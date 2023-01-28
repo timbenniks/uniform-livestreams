@@ -29,7 +29,7 @@ const Header: FunctionComponent<Props> = ({ nodes }) => {
           {navItems &&
             navItems.map((node) => {
               return (
-                <li>
+                <li key={node.name}>
                   <a
                     title={node.name}
                     href={node.path}
