@@ -29,17 +29,24 @@ const ContactUsForm: React.FC<ContactUsFormProps> = ({
     });
   };
 
+  const encode = (data: { [key: string]: any }) =>
+    Object.keys(data)
+      .map(
+        (key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+      )
+      .join("&");
+
   const handleSubmit = (event) => {
     event.preventDefault();
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(form).toString(),
+      body: encode(form),
     })
       .then(() => {
         setShowThankYou(true);
       })
-      .catch((error) => alert(error));
+      .catch((error) => console.error(error));
   };
 
   return (
