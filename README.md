@@ -1,11 +1,10 @@
 TODO
 
 - Add Tim tries
-- Become a guest
-- Mobile navigation styling
 
 Done
 
+- Mobile navigation styling
 - Add Stream Pages
 - Composable without compromise questions component
 - About the team page
