@@ -1,2 +1,10 @@
+# *
 User-agent: *
-Disallow:
+Allow: /
+
+# Host
+Host: https://uniform-livestream.snetlify.app
+
+# Sitemaps
+Sitemap: https://uniform-livestream.snetlify.app/sitemap.xml
+Sitemap: https://uniform-livestreams.netlify.app/server-sitemap.xml
