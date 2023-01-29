@@ -53,7 +53,7 @@ const Header: FunctionComponent<Props> = ({ nodes }) => {
         <ul
           className={`lg:flex space-x-6 text-sm underline items-center  ${
             open
-              ? "absolute w-full top-20 left-0 flex flex-col bg-black p-4 overflow-auto"
+              ? "absolute w-full top-20 left-0 flex flex-col bg-black p-4"
               : "hidden"
           }`}
         >

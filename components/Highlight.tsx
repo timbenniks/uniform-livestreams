@@ -32,7 +32,7 @@ const Highlight: React.FC<HighlightProps> = ({
       variant ? "bg-[#001C6C]" : "bg-[#DF0000]"
     } text-white`}
   >
-    <div className="max-w-7xl m-auto flex justify-between flex-col md:flex-row">
+    <div className="max-w-7xl m-auto flex justify-between flex-col md:flex-row overflow-hidden">
       <article className="p-12 md:px-0 md:py-12">
         <Slot name="title" />
         <Slot name="description" />
@@ -47,7 +47,7 @@ const Highlight: React.FC<HighlightProps> = ({
           alt={image[0]?.alt || ""}
           width={image[0]?.width || ""}
           height={image[0]?.height || ""}
-          className="block max-w-[489px]"
+          className="block w-full h-auto max-w-[489px]"
           loading="lazy"
         />
       ) : null}
